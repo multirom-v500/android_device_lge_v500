@@ -29,3 +29,24 @@ TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
 TW_NO_REBOOT_BOOTLOADER := true
 RECOVERY_SDCARD_ON_DATA := true
+
+#Still needed by multirom boot menu
+DEVICE_RESOLUTION := 1080x1920
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+
+#MultiROM config. MultiROM also uses parts of TWRP config
+MR_CONTINUOUS_FB_UPDATE := true
+MR_DEV_BLOCK_BOOTDEVICE := true
+MR_NO_KEXEC := enabled
+MR_DPI := xhdpi
+MR_DPI_FONT := 270
+MR_FSTAB := device/lge/v500/multirom/mrom.fstab
+MR_INIT_DEVICES := device/lge/v500/multirom/mr_init_devices.c
+MR_INPUT_TYPE := type_b
+MR_RD_ADDR := 0x82500000
+MR_KEXEC_MEM_MIN := 0x85000000
+MR_USE_MROM_FSTAB := true
+MR_DEVICE_HOOKS := device/lge/v500/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 4
+TARGET_RECOVERY_IS_MULTIROM := true
